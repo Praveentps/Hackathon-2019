@@ -19,13 +19,13 @@ pipeline {
             sh 'yum -y install zip'
           }
         }
-        stage('install npm') {
-          steps {
-            sh '''yum install -y gcc-c++ make
+      }
+    }
+    stage('install npm') {
+      steps {
+        sh '''yum install -y gcc-c++ make
 curl -sL https://rpm.nodesource.com/setup_6.x | bash -
 yum -y install nodejs'''
-          }
-        }
       }
     }
     stage('build') {
