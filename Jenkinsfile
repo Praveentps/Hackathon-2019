@@ -17,6 +17,11 @@ pipeline {
         sh 'npm install'
       }
     }
+    stage('create pkg') {
+      steps {
+        sh 'zip -r hackathon.zip *.*'
+      }
+    }
   }
   environment {
     project = 'hackathon'
