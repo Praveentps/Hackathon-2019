@@ -35,7 +35,7 @@ yum -y install nodejs'''
     }
     stage('create pkg') {
       steps {
-        sh 'zip hack.zip /var/lib/jenkins/workspace/*/*'
+        sh 'zip hack.zip /var/jenkins_home/workspace/ASCENA-2019_master/*'
       }
     }
   }
