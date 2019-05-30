@@ -2,23 +2,14 @@ pipeline {
   agent {
     docker {
       args '-p 3000:3000'
-      image 'node:6-alpine'
+      image 'centos/nodejs-6-centos7'
     }
 
   }
   stages {
     stage('checkout') {
-      parallel {
-        stage('checkout') {
-          steps {
-            git(url: 'https://github.com/Praveentps/Hackthon-2019.git', branch: 'master')
-          }
-        }
-        stage('install zip') {
-          steps {
-            sh 'apt-get install zip'
-          }
-        }
+      steps {
+        git(url: 'https://github.com/Praveentps/Hackthon-2019.git', branch: 'master')
       }
     }
     stage('build') {
