@@ -19,6 +19,11 @@ pipeline {
             sh 'yum -y install zip'
           }
         }
+        stage('install npm') {
+          steps {
+            sh 'yum -y install npm'
+          }
+        }
       }
     }
     stage('build') {
