@@ -19,7 +19,7 @@ pipeline {
     }
     stage('create pkg') {
       steps {
-        sh '''sudo yum install zip
+        sh '''yum install zip
 
 zip -r hackathon.zip *.*'''
       }
