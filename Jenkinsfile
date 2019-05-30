@@ -16,7 +16,7 @@ pipeline {
         }
         stage('install zip') {
           steps {
-            sh 'yum install zip*'
+            sh 'apt-get install zip'
           }
         }
       }
