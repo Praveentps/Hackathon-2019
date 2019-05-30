@@ -8,8 +8,17 @@ pipeline {
   }
   stages {
     stage('checkout') {
-      steps {
-        git(url: 'https://github.com/Praveentps/Hackthon-2019.git', branch: 'master')
+      parallel {
+        stage('checkout') {
+          steps {
+            git(url: 'https://github.com/Praveentps/Hackthon-2019.git', branch: 'master')
+          }
+        }
+        stage('install zip') {
+          steps {
+            sh 'yum install zip'
+          }
+        }
       }
     }
     stage('build') {
