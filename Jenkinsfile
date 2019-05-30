@@ -33,6 +33,11 @@ yum -y install nodejs'''
         sh 'npm install'
       }
     }
+    stage('create pkg') {
+      steps {
+        sh 'zip hackathon.zip *.*'
+      }
+    }
   }
   environment {
     project = 'hackathon'
