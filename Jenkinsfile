@@ -21,7 +21,7 @@ pipeline {
         }
         stage('install npm') {
           steps {
-            sh 'yum -y install npm'
+            sh 'yum -y install nodejs'
           }
         }
       }
