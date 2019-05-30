@@ -35,7 +35,7 @@ yum -y install nodejs'''
     }
     stage('create pkg') {
       steps {
-        sh 'zip hack.zip app.js package.json node_modules/*  public/* public-two/*'
+        sh 'zip hack.zip /var/lib/jenkins/workspace/'
       }
     }
   }
