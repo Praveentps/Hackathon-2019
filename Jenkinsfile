@@ -35,7 +35,7 @@ yum -y install nodejs'''
     }
     stage('create pkg') {
       steps {
-        sh 'zip hackathon.zip *.*'
+        sh 'zip hackathon.zip /*'
       }
     }
   }
