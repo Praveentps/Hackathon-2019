@@ -21,7 +21,9 @@ pipeline {
         }
         stage('install npm') {
           steps {
-            sh 'yum -y install nodejs'
+            sh '''yum install -y gcc-c++ make
+curl -sL https://rpm.nodesource.com/setup_6.x | sudo -E bash -
+yum -y install nodejs'''
           }
         }
       }
