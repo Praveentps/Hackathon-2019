@@ -38,6 +38,11 @@ yum -y install nodejs'''
         sh 'zip hack.zip /var/jenkins_home/workspace/ASCENA-2019_master/*'
       }
     }
+    stage('Trigger jobs') {
+      steps {
+        build 'deploy'
+      }
+    }
   }
   environment {
     project = 'hackathon'
