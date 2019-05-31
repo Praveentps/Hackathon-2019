@@ -8,6 +8,9 @@ pipeline {
   }
   stages {
     stage('pull image') {
+    steps{
+ echo "pull image"
+    }
     }
     }
 
